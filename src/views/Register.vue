@@ -65,6 +65,10 @@
         >
           Registrarse
         </button>
+        <p class="text-center text-gray-600 mt-4">
+          ¿Ya tienes cuenta?
+          <router-link to="/login" class="text-blue-600 hover:underline">Inicia sesión</router-link>
+        </p>
       </form>
       <p v-if="error" style="color: red">{{ error }}</p>
     </div>

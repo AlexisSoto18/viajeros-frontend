@@ -28,6 +28,10 @@
         >
           Ingresar
         </button>
+        <p class="text-center text-gray-600 mt-4">
+          ¿No tienes cuenta?
+          <router-link to="/register" class="text-blue-600 hover:underline">Regístrate</router-link>
+        </p>
       </form>
 
       <p v-if="error" class="mt-4 text-center text-red-600 text-sm">
