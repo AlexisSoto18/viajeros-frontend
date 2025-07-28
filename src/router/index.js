@@ -9,8 +9,12 @@ import Home from '../views/Home.vue'
 import { useUserStore } from '@/stores/user'
 
 const routes = [
+   {
+    path: '/',
+    redirect: '/Home'
+  },
   {
-    path: '/home',
+    path: '/Home',
     name: 'home',
     component: Home,
   },

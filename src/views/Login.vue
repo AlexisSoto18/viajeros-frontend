@@ -1,31 +1,19 @@
 <template>
-  <div
-    class="flex items-center justify-center min-h-screen bg-gradient-to-br bg-grey-100 from-gray-200 to-gray-300"
-  >
-    <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md">
+  <div class="w-full max-w-md rounded-2xl">
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
       <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Iniciar sesión</h2>
 
       <form @submit.prevent="handleLogin" class="space-y-4">
-        <input
-          v-model="email"
-          type="email"
-          placeholder="Correo electrónico"
+        <input v-model="email" type="email" placeholder="Correo electrónico"
           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
-          required
-        />
+          required />
 
-        <input
-          v-model="password"
-          type="password"
-          placeholder="Contraseña"
+        <input v-model="password" type="password" placeholder="Contraseña"
           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
-          required
-        />
+          required />
 
-        <button
-          type="submit"
-          class="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-blue-900 transition duration-300"
-        >
+        <button type="submit"
+          class="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-slateCustom transition duration-300">
           Ingresar
         </button>
         <p class="text-center text-gray-600 mt-4">

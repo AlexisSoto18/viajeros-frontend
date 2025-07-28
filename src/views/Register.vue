@@ -1,68 +1,39 @@
 <template>
-  <div
-    class="flex items-center justify-center min-h-screen bg-gradient-to-br bg-grey-100 from-gray-200 to-gray-300"
-  >
+  <div class="w-full max-w-md">
     <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md">
       <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Crear cuenta</h2>
       <form @submit.prevent="handleRegister" class="space-y-4">
-        <input
-          v-model="full_name"
-          type="text"
-          placeholder="Nombre completo"
+        <input v-model="full_name" type="text" placeholder="Nombre completo"
           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
-          required
-        />
-        <input
-          v-model="email"
-          type="email"
-          placeholder="Correo electrónico"
+          required />
+        <input v-model="email" type="email" placeholder="Correo electrónico"
           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
-          required
-        />
-        <input
-          v-model="password"
-          type="password"
-          placeholder="Contraseña"
+          required />
+        <input v-model="password" type="password" placeholder="Contraseña"
           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
-          required
-        />
-        <input
-          v-model="passwordConfirmation"
-          type="password"
-          placeholder="Confirmar contraseña"
+          required />
+        <input v-model="passwordConfirmation" type="password" placeholder="Confirmar contraseña"
           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
-          required
-        />
+          required />
 
         <!-- Selector personalizado -->
         <div class="relative w-full">
-          <button
-            type="button"
-            @click="isDropdownOpen = !isDropdownOpen"
-            class="w-full px-4 py-2 text-left bg-white border rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-700"
-          >
+          <button type="button" @click="isDropdownOpen = !isDropdownOpen"
+            class="w-full px-4 py-2 text-left bg-white border rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-700">
             {{ selectedLabel }}
           </button>
 
-          <ul
-            v-if="isDropdownOpen"
-            class="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-md"
-          >
-            <li
-              v-for="option in options"
-              :key="option.value"
-              @click="selectOption(option)"
-              class="px-4 py-2 cursor-pointer hover:bg-indigo-100 text-gray-700"
-            >
+          <ul v-if="isDropdownOpen"
+            class="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-md">
+            <li v-for="option in options" :key="option.value" @click="selectOption(option)"
+              class="px-4 py-2 cursor-pointer hover:bg-indigo-100 text-gray-700">
               {{ option.label }}
             </li>
           </ul>
         </div>
 
-        <button
-          type="submit"
-          class="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-blue-900 transition duration-300"
-        >
+        <button type="submit"
+          class="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-slateCustom transition duration-300">
           Registrarse
         </button>
         <p class="text-center text-gray-600 mt-4">
