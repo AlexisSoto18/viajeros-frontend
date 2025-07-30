@@ -47,10 +47,9 @@ const handleLogin = async () => {
     const role = userStore.user.role
     if (role === 'admin') {
       router.push('/admin')
-    } else if (role === 'anfitrion') {
-      router.push('/dashboard')
-    } else {
-      router.push('/turista')
+    }
+    else {
+      router.push('/Pueblos')
     }
   } else {
     error.value = true

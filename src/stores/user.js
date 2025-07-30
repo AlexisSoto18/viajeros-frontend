@@ -25,7 +25,7 @@ export const useUserStore = defineStore('user', {
   actions: {
     async login(email, password) {
       try {
-        const response = await api.post('/api/login', { email, password })
+        const response = await api.post('/login', { email, password })
         this.token = response.data.token
         this.user = response.data.user
 
@@ -47,7 +47,7 @@ export const useUserStore = defineStore('user', {
 
     async validateToken() {
       try {
-        const response = await api.get('/api/validate', {
+        const response = await api.get('/validate', {
           headers: {
             Authorization: `Bearer ${this.token}`,
           },

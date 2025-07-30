@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useUserStore } from '@/stores/user'
 const api = axios.create({
-  baseURL: 'http://localhost:3000', // Cambia por el host en producción
+  baseURL: 'http://localhost:3000/api', // Cambia por el host en producción
   headers: {
     'Content-Type': 'application/json',
   },

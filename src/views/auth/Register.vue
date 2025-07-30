@@ -78,7 +78,7 @@ const userStore = useUserStore()
 
 const handleRegister = async () => {
   try {
-    const response = await api.post('/api/register', {
+    const response = await api.post('/register', {
       full_name: full_name.value,
       email: email.value,
       password: password.value,

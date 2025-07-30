@@ -1,15 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Login from '../views/Login.vue'
-import Register from '../views/Register.vue'
-import Anfitrion from '../views/Anfitrion.vue'
-import AdminView from '../views/AdminView.vue'
-import Turista from '../views/Turista.vue'
+// Importación de vistas autenticadas
+import Login from '../views/auth/Login.vue'
+import Register from '../views/auth/Register.vue'
+// Importación de vistas admin
+import AdminView from '../views/admin/AdminView.vue'
+import CrudPueblos from '@/views/admin/CrudPueblos.vue'
+// Importación de vistas de usuario
+import Anfitrion from '../views/user/Anfitrion.vue'
+import Turista from '../views/user/Turista.vue'
+import VistaPueblos from '@/views/user/VistaPueblos.vue'
+// Importación de la vista principal
 import Home from '../views/Home.vue'
+// Importacion del main pueblos
+import TownMain from '@/views/towns/TownMain.vue'
 
 import { useUserStore } from '@/stores/user'
 
 const routes = [
-   {
+  {
     path: '/',
     redirect: '/Home'
   },
@@ -23,6 +31,11 @@ const routes = [
     name: 'turista',
     component: Turista,
     meta: { requiresAuth: true, role: 'turista' },
+  },
+  {
+    path: '/pueblos',
+    name: 'VistaPueblos',
+    component: VistaPueblos,
   },
   {
     path: '/login',
@@ -41,11 +54,28 @@ const routes = [
     meta: { requiresAuth: true, role: 'anfitrion' },
   },
   {
+    path: '/pueblos',
+    name: 'VistaPueblos',
+    component: VistaPueblos,
+  },
+  {
     path: '/admin',
     name: 'admin',
     component: AdminView,
     meta: { requiresAuth: true, role: 'admin' },
   },
+  {
+    path: '/admin/pueblos',
+    name: 'CrudPueblos',
+    component: CrudPueblos,
+    meta: { requiresAuth: true, role: 'admin' }
+  },
+  {
+    path: '/towns/:id',
+    name: 'town-detail',
+    component: TownMain,
+  },
+
 ]
 
 const router = createRouter({

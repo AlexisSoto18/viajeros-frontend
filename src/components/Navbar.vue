@@ -25,6 +25,10 @@
           </div>
         </template>
         <template v-else>
+          <button @click="goToPueblos"
+            class="hover:text-red-600 transition-colors px-3 py-2 rounded-lg hover:bg-red-50">
+            Pueblos
+          </button>
           <button @click="logout" class="hover:text-red-600 transition-colors px-3 py-2 rounded-lg hover:bg-red-50">
             Cerrar sesión
           </button>
@@ -101,6 +105,11 @@ export default {
       showMobileMenu.value = false; // Cerrar menú móvil después de navegar
     };
 
+    const goToPueblos = () => {
+      router.push('/pueblos');
+      showMobileMenu.value = false; // Cerrar menú móvil después de navegar
+    };
+
     const toggleMobileMenu = () => {
       showMobileMenu.value = !showMobileMenu.value;
     };
@@ -110,6 +119,7 @@ export default {
       logout,
       goToRegister,
       goToLogin,
+      goToPueblos,
       showMobileMenu,
       toggleMobileMenu
     };
