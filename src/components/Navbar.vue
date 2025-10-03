@@ -25,8 +25,11 @@
           </div>
         </template>
         <template v-else>
-          <button @click="goToPueblos"
-            class="hover:text-red-600 transition-colors px-3 py-2 rounded-lg hover:bg-red-50">
+          <button
+            v-if="!userStore.isAdmin"
+            @click="goToPueblos"
+            class="hover:text-red-600 transition-colors px-3 py-2 rounded-lg hover:bg-red-50"
+          >
             Pueblos
           </button>
           <button @click="logout" class="hover:text-red-600 transition-colors px-3 py-2 rounded-lg hover:bg-red-50">
@@ -110,6 +113,11 @@ export default {
       showMobileMenu.value = false; // Cerrar menú móvil después de navegar
     };
 
+    const goToAdminPueblos = () => {
+      router.push('/admin/main');
+      showMobileMenu.value = false; // Cerrar menú móvil después de navegar
+    };
+
     const toggleMobileMenu = () => {
       showMobileMenu.value = !showMobileMenu.value;
     };
@@ -121,7 +129,8 @@ export default {
       goToLogin,
       goToPueblos,
       showMobileMenu,
-      toggleMobileMenu
+      toggleMobileMenu,
+      goToAdminPueblos
     };
   }
 };

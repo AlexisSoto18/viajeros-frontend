@@ -5,6 +5,7 @@ import Register from '../views/auth/Register.vue'
 // Importación de vistas admin
 import AdminView from '../views/admin/AdminView.vue'
 import CrudPueblos from '@/views/admin/CrudPueblos.vue'
+import mainAdmin from '@/views/admin/dashboardAdmin/mainAdmin.vue'
 // Importación de vistas de usuario
 import Anfitrion from '../views/user/Anfitrion.vue'
 import Turista from '../views/user/Turista.vue'
@@ -68,6 +69,12 @@ const routes = [
     path: '/admin/pueblos',
     name: 'CrudPueblos',
     component: CrudPueblos,
+    meta: { requiresAuth: true, role: 'admin' }
+  },
+  {
+    path: '/admin/main',
+    name: 'mainAdmin',
+    component: mainAdmin,
     meta: { requiresAuth: true, role: 'admin' }
   },
   {
