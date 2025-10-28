@@ -1,4 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '@/views/Home.vue'
+import TownView from '@/views/towns/TownView.vue'
+
+
 // Importación de vistas autenticadas
 import Login from '../views/auth/Login.vue'
 import Register from '../views/auth/Register.vue'
@@ -18,6 +22,8 @@ import TownMain from '@/views/towns/TownMain.vue'
 import { useUserStore } from '@/stores/user'
 
 const routes = [
+  { path: '/', name: 'home', component: HomeView },
+  { path: '/towns/:id', name: 'town-show', component: TownView, props: true },
   {
     path: '/',
     redirect: '/Home'
