@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/Home.vue'
-import TownView from '@/views/towns/TownView.vue'
-
+import Navegador from '@/components/Navegador.vue'
 
 // Importación de vistas autenticadas
 import Login from '../views/auth/Login.vue'
@@ -23,10 +22,9 @@ import { useUserStore } from '@/stores/user'
 
 const routes = [
   { path: '/', name: 'home', component: HomeView },
-  { path: '/towns/:id', name: 'town-show', component: TownView, props: true },
   {
     path: '/',
-    redirect: '/Home'
+    redirect: '/Home',
   },
   {
     path: '/Home',
@@ -75,20 +73,19 @@ const routes = [
     path: '/admin/pueblos',
     name: 'CrudPueblos',
     component: CrudPueblos,
-    meta: { requiresAuth: true, role: 'admin' }
+    meta: { requiresAuth: true, role: 'admin' },
   },
   {
     path: '/admin/main',
     name: 'mainAdmin',
     component: mainAdmin,
-    meta: { requiresAuth: true, role: 'admin' }
+    meta: { requiresAuth: true, role: 'admin' },
   },
   {
     path: '/towns/:id',
     name: 'town-detail',
     component: TownMain,
   },
-
 ]
 
 const router = createRouter({
