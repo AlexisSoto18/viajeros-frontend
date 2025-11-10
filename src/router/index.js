@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/Home.vue'
 import Navegador from '@/components/Navegador.vue'
-
+import PlacesView from '@/views/anfitrion/PlacesView.vue'
+import PlaceDetail from '@/components/PlaceDetail.vue'
 // Importación de vistas autenticadas
 import Login from '../views/auth/Login.vue'
 import Register from '../views/auth/Register.vue'
@@ -85,6 +86,18 @@ const routes = [
     path: '/towns/:id',
     name: 'town-detail',
     component: TownMain,
+  },
+  {
+    path: '/towns/:id/places',
+    name: 'places',
+    component: PlacesView,
+    meta: { requiresAuth: true, roles: ['anfitrion', 'admin'] },
+  },
+  {
+    path: '/places/:id',
+    name: 'place-detail',
+    component: PlaceDetail,
+    meta: { requiresAuth: true, roles: ['anfitrion', 'admin', 'turista'] },
   },
 ]
 
