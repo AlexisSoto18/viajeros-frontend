@@ -19,6 +19,8 @@ import Home from '../views/Home.vue'
 import TownMain from '@/views/towns/TownMain.vue'
 
 import { useUserStore } from '@/stores/user'
+import EventosAnfitrion from '@/views/eventos/EventosAnfitrion.vue'
+import EventosTurista from '@/views/eventos/EventosTurista.vue'
 
 const routes = [
   { path: '/', name: 'home', component: HomeView },
@@ -81,11 +83,22 @@ const routes = [
     component: mainAdmin,
     meta: { requiresAuth: true, role: 'admin' },
   },
+  
   {
     path: '/towns/:id',
     name: 'town-detail',
     component: TownMain,
   },
+ {
+    path: '/eventos/anfitrion',
+    name: 'EventosAnfitrion',
+    component: EventosAnfitrion
+  },
+  {
+    path: '/eventos/turista',
+    name: 'EventosTurista',
+    component: EventosTurista
+  }
 ]
 
 const router = createRouter({
