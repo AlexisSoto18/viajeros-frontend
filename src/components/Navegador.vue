@@ -51,16 +51,10 @@
         <PlacesList />
       </div>
 
-    <!-- Eventos -->
-<div v-if="activeTab === 'events'" class="mt-4">
-  <div v-if="userRole === 'host'">
-    <EventosAnfitrion :puebloId="puebloId" />
-  </div>
-
-  <div v-else>
-    <EventosTurista :puebloId="puebloId" />
-  </div>
-</div>
+      <!-- 🎉 Eventos -->
+      <div v-if="activeTab === 'events'">
+        <div class="text-gray-500">Eventos (pendiente de conectar)</div>
+      </div>
 
       <!-- 🛍 Comercio local -->
       <div v-if="activeTab === 'commerce'">
@@ -79,10 +73,6 @@ import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { usePlacesStore } from '@/stores/places'
 import { useUserStore } from '@/stores/user'
-import EventosAnfitrion from '@/views/eventos/EventosAnfitrion.vue'
-import EventosTurista from '@/views/eventos/EventosTurista.vue'
-
-//import Turismo from '@/components/Turismo.vue'
 import PlacesList from './PlacesList.vue'
 
 const route = useRoute()
