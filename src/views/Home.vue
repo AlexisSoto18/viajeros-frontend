@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 
 const mensaje = ref('')
-const texto = 'Bienvenido, viajero 🌍'
+const texto = 'Bienvenido, viajero 🌍, dev'
 
 onMounted(() => {
   let i = 0
